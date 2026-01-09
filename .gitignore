@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+!best-*.ckpt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Data
+*.jpg
+*.png
+*.xml
+PCB_DATASET/
+data/
+datasets/
+
+# Logs and outputs
+wandb/
+logs/
+outputs/
+pcb_checkpoints/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model checkpoints (keep only best)
+checkpoints/
+!checkpoints/best-*.ckpt
