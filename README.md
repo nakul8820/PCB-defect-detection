@@ -3,6 +3,9 @@
 
 A PyTorch Lightning-based implementation for automated PCB defect detection using Faster R-CNN with ResNet50-FPN backbone.
 
+## WandB Report:
+Link :https://wandb.ai/nakupatel-indus-university/PCB_Inspection/reports/PCB-Defect-Detection-with-Faster-R-CNN--VmlldzoxNTU4MTc1Nw?accessToken=9neui0ovr4r4ed9w23v87vuhjpbtqf7pi9nmzep0zj7uffdfwtjkwqcdqklarsl7
+
 ## 🎯 Project Overview
 
 This project implements a deep learning pipeline for detecting six types of PCB defects:
