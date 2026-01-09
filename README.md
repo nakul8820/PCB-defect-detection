@@ -1,4 +1,3 @@
-# PCB-defect-detection-project-
 
 # PCB Defect Detection with Faster R-CNN
 
