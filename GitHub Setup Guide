@@ -1,0 +1,213 @@
+# GitHub Repository Setup Guide
+
+## Step 1: Create Repository Structure
+
+Create the following folder structure locally:
+
+```
+pcb-defect-detection/
+├── src/
+│   ├── __init__.py
+│   ├── dataset.py
+│   ├── model.py
+│   ├── train.py
+│   └── inference.py
+├── config/
+│   └── config.yaml (optional)
+├── notebooks/
+│   └── exploration.ipynb (optional)
+├── .gitignore
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
+
+## Step 2: Initialize Git Repository
+
+Open terminal in the project root directory and run:
+
+```bash
+# Initialize git repository
+git init
+
+# Add all files
+git add .
+
+# Make first commit
+git commit -m "Initial commit: PCB defect detection project"
+```
+
+## Step 3: Create GitHub Repository
+
+1. Go to [GitHub](https://github.com)
+2. Click the "+" icon → "New repository"
+3. Repository name: `pcb-defect-detection`
+4. Description: "Automated PCB defect detection using Faster R-CNN and PyTorch Lightning"
+5. Choose Public or Private
+6. **Do NOT** initialize with README (you already have one)
+7. Click "Create repository"
+
+## Step 4: Connect Local to Remote
+
+```bash
+# Add remote origin (replace YOUR_USERNAME)
+git remote add origin https://github.com/YOUR_USERNAME/pcb-defect-detection.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+## Step 5: Add Topics and Description
+
+On your GitHub repository page:
+1. Click "About" settings (gear icon)
+2. Add topics: `deep-learning`, `object-detection`, `pytorch`, `pytorch-lightning`, `computer-vision`, `pcb-inspection`, `faster-rcnn`
+3. Add website (if you have one)
+4. Save changes
+
+## Step 6: Create Additional Files (Optional)
+
+### LICENSE
+If you want to add a license:
+1. Click "Add file" → "Create new file"
+2. Name it `LICENSE`
+3. Click "Choose a license template"
+4. Select MIT License (or your preference)
+5. Commit
+
+### GitHub Actions (Optional CI/CD)
+Create `.github/workflows/python-app.yml` for automated testing:
+
+```yaml
+name: Python application
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+```
+
+## Step 7: Update README with Your Information
+
+Edit README.md to include:
+- Your name and contact
+- Link to your repository
+- Results from your training runs
+- Sample detection images
+- Any specific setup instructions for your dataset
+
+## Step 8: Best Practices
+
+### Branching Strategy
+```bash
+# Create development branch
+git checkout -b develop
+
+# Create feature branches
+git checkout -b feature/new-augmentation
+
+# Merge back to main when ready
+git checkout main
+git merge develop
+```
+
+### Commit Messages
+Use clear, descriptive commit messages:
+```bash
+git commit -m "Add: CoarseDropout augmentation for better generalization"
+git commit -m "Fix: Box validation in SubsetWithTransform"
+git commit -m "Improve: Reduce anchor sizes for small defects"
+```
+
+### Tags for Releases
+```bash
+# Tag important versions
+git tag -a v1.0.0 -m "First stable release"
+git push origin v1.0.0
+```
+
+## Step 9: Share Your Work
+
+Add badges to README.md:
+
+```markdown
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![PyTorch](https://img.shields.io/badge/pytorch-2.0+-red.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+```
+
+## Step 10: Maintain Your Repository
+
+Regular maintenance:
+- Respond to issues
+- Review pull requests
+- Update dependencies
+- Add documentation
+- Share results and visualizations
+
+## Common Git Commands Reference
+
+```bash
+# Check status
+git status
+
+# Add specific files
+git add src/model.py
+
+# Commit with message
+git commit -m "Your message"
+
+# Push changes
+git push origin main
+
+# Pull latest changes
+git pull origin main
+
+# View commit history
+git log --oneline
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Discard local changes
+git checkout -- filename.py
+```
+
+## Troubleshooting
+
+### Large files error
+If you accidentally committed large files:
+```bash
+# Remove from git but keep locally
+git rm --cached large_file.ckpt
+
+# Add to .gitignore
+echo "*.ckpt" >> .gitignore
+
+# Commit the changes
+git commit -m "Remove large checkpoint files"
+```
+
+### Authentication
+Use Personal Access Token instead of password:
+1. GitHub → Settings → Developer settings → Personal access tokens
+2. Generate new token with repo access
+3. Use token as password when pushing
+
+Or set up SSH keys for easier authentication.
