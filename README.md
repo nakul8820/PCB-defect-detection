@@ -115,6 +115,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Contact
 
-Your Name - your.email@example.com
+Your Name - patelnakul36@gmail.com
 
 Project Link: [https://github.com/nakul8820/pcb-defect-detection](https://github.com/nakul8820/pcb-defect-detection)
